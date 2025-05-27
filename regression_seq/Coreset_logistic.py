@@ -242,20 +242,20 @@ def l2_loss(X, y, beta, lamda):
     xbeta = np.dot(X, beta)
     loss = np.sum(-y * xbeta + np.log(1 + np.exp(xbeta)), 0) / X.shape[0]
 
-    return np.float(loss)
+    return float(loss)
 
 
 def F_predict(X, y, beta):
     y_predict = np.dot(X, beta)
     y[y == 0] = -1
     right = np.count_nonzero(y_predict * y > 0) / y.shape[0]
-    return np.float(right)
+    return float(right)
 
 
 def l2_loss_test(X_test, y_test, beta, lamda):
     xbeta = np.dot(X_test, beta)
     loss = np.sum(-y_test * xbeta + np.log(1 + np.exp(xbeta)), 0) / X_test.shape[0]
-    return np.float(loss)
+    return float(loss)
 
 
 def evaluate(X, y, X_test, y_test, beta, lamda):
