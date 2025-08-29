@@ -8,7 +8,7 @@ import PointSet
 
 class RegressionProblem(object):
     def __init__(self, p_norm=2):
-        assert(p_norm < 0, 'p_norm must be a positive scalar!')
+        assert p_norm > 0, 'p_norm must be a positive scalar!'
         self.p_norm = p_norm
         self.coef_ = None
         # self.time_taken = None

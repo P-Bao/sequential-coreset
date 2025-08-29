@@ -227,11 +227,11 @@ def run(args):
 
 def l2_loss_test(X_test, y_test, beta, lamda):
     loss = np.sum(np.power(np.dot(X_test, beta) - y_test, 2), 0) / X_test.shape[0]
-    return np.float(loss)
+    return float(loss)
 
 def l2_loss_test_reg(X_test, y_test, beta, lamda):
     loss = np.sum(np.power(np.dot(X_test, beta) - y_test, 2), 0) / X_test.shape[0]+np.sum(lamda/9*np.power(beta,2),0)/X_test.shape[0]
-    return np.float(loss)
+    return float(loss)
 
 def evaluate(X,y,X_test,y_test,beta,lamda):
     """
